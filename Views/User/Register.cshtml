@@ -1,0 +1,48 @@
+﻿@model chat.Models.RegisterModel
+
+
+<div class="authincation h-100 pt-5 vh-100">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100 align-items-center">
+            <div class="col-md-6">
+                <div class="authincation-content">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12">
+                            <div class="auth-form page-r-logo">
+                                <div class="text-center mb-3">
+                                    <a href="/"><img src="~/asset/image/logo.png" alt="" style="height: 100px; width: 110px; "></a>
+                                    @*<a href="index.html"><img src="~/public/assets/images/logo-full-light.png" alt="" class="light-logo m-auto"></a>*@
+                                </div>
+                                <h4 class="text-center mb-4">Sign up your account</h4>
+                                <form action="/Register" method="post">
+                                    <div class="mb-3">
+                                        <label asp-for="UserName" class="mb-1"><strong>Username</strong></label>
+                                        <input asp-for="UserName" type="text" class="form-control">
+                                        <span class="text-danger" asp-validation-for="UserName"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label asp-for="Email" class="mb-1"><strong>Email</strong></label>
+                                        <input asp-for="Email" type="email" class="form-control">
+                                        <span class="text-danger" asp-validation-for="Email"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label asp-for="Password" class="mb-1"><strong>Password</strong></label>
+                                        <input asp-for="Password" type="password" class="form-control">
+                                        <span class="text-danger" asp-validation-for="Password"></span>
+                                    </div>
+                                    <span class="text-danger">@TempData["Err"]</span>
+                                    <div class="text-center mt-4">
+                                        <button type="submit" class="btn btn-primary btn-block">Sign me up</button>
+                                    </div>
+                                </form>
+                                <div class="new-account mt-3">
+                                    <p>Already have an account? <a class="text-primary" href="/login">Sign in</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

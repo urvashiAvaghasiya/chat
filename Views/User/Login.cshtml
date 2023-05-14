@@ -1,0 +1,63 @@
+﻿  
+@model chat.Models.LoginModel
+
+
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="authincation h-100">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100 align-items-center">
+            <div class="col-md-6">
+                <div class="authincation-content">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12">
+                            <div class="auth-form page-r-logo">
+                                <div class="text-center mb-3">
+                                    <a href="/"><img src="~/asset/image/logo.png" alt="" style="height: 100px; width: 110px; "></a>
+                                    @*<a href="index.html"><img src="public/assets/images/logo-full-light.png" alt="" class="light-logo m-auto"></a>*@
+                                </div>
+                                <h4 class="fs-20 text-center">Sign in your account</h4>
+                                <div class="sign-in-your py-4 px-2">
+                                    <form action="/Login" method="post">
+                                        <div class="mb-3">
+                                            <label asp-for="UserName" class="mb-1"><strong>UserName</strong></label>
+                                            <input asp-for="UserName" type="text" class="form-control">
+                                            <span class="text-danger" asp-validation-for="UserName"></span>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label asp-for="Password" class="mb-1"><strong>Password</strong></label>
+                                            <input asp-for="Password" class="form-control">
+                                            <span class="text-danger" asp-validation-for="Password"></span>
+                                        </div>
+
+                                        <span class="text-danger">@TempData["LErr"]</span>
+                                        <div class="row d-flex justify-content-between mt-4 mb-2">
+                                            <div class="mb-3">
+                                                <div class="form-check custom-checkbox ms-1">
+                                                    <input asp-for="RememberLogin" type="checkbox" class="form-check-input" id="basic_checkbox_1">
+                                                    <label asp-for="RememberLogin" class="form-check-label" for="basic_checkbox_1">Remember my preference</label>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <a href="page_forgot_password.html">Forgot Password?</a>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary btn-block">Sign Me In</button>
+                                        </div>
+                                    </form>
+                                    <div class="new-account mt-3">
+                                        <p>Don't have an account? <a class="text-primary" href="/Register">Sign Up</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
